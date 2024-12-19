@@ -4,6 +4,8 @@ import shap
 import matplotlib.pyplot as plt
 import joblib
 
+st.set_page_config(page_title="Delirium Prediction", layout="wide", theme="light")
+
 rename_dict = {
     "Spinal Anaesthesia": "6:_anaesthesia_Spinal",
     "General Anaesthesia": "6:_anaesthesia_General anaesthesia",
