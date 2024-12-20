@@ -198,7 +198,7 @@ def results_page():
     # Dummy model prediction
     prediction = model.predict_proba(X_test)[0, 1]
     elevated_threshold = 0.2
-    st.success(f"The patient has a {"Elevated" if prediction > elevated_threshold else "Low"} risk of postoperative delirium. Probability: {prediction*100:.1f}%")
+    st.success(f"The patient has {"an elevated" if prediction > elevated_threshold else "a low"} risk of postoperative delirium. Probability: {prediction*100:.1f}%")
 
     # Generate and display SHAP plot
     st.markdown("### SHAP Values Explanation")
