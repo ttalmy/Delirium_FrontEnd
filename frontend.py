@@ -4,32 +4,6 @@ import shap
 import matplotlib.pyplot as plt
 import joblib
 
-# Set light theme for Streamlit
-st.set_page_config(page_title="Medical Prediction Interface", layout="wide")
-
-# Custom CSS to ensure light mode
-st.markdown("""
-    <style>
-        .stApp {
-            background-color: white;
-            color: black;
-        }
-        .stButton>button {
-            background-color: #f0f2f6;
-            color: black;
-        }
-        .stRadio>label {
-            color: black;
-        }
-        .stMarkdown {
-            color: black;
-        }
-        .stSlider>div {
-            background-color: #f0f2f6;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 rename_dict = {
     "Spinal Anaesthesia": "6:_anaesthesia_Spinal",
     "General Anaesthesia": "6:_anaesthesia_General anaesthesia",
