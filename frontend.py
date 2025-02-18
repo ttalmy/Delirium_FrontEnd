@@ -7,12 +7,12 @@ import joblib
 rename_dict = {
     "Spinal Anaesthesia": "6:_anaesthesia_Spinal",
     "General Anaesthesia": "6:_anaesthesia_General anaesthesia",
-    "Laryngeal Mask using a Tube": "27:_laryngeal_mask_BI_Tube",
+    "Airway Management using a Tube": "27:_laryngeal_mask_BI_Tube",
     "EEG Usage": "6:_anaesthesia_EEG used (is protective)",
     "Target Controlled Infusion (TCI)": "6:_anaesthesia_TCI (Target Controlled Infusion: drugs on level of brain receptors. Algorithm, so should be better than TIVA weight-based.)",
     "Gynaecology/Obstetrics Surgery": "4:_surgical_speciality_Gyn/Obs",
     "Continuous Temperature Monitoring": "6:_anaesthesia_Cont. Temp. Monitoring",
-    "Laryngeal Mask using LMA": "27:_laryngeal_mask_BI_LMA",
+    "Airway Management using LMA": "27:_laryngeal_mask_BI_LMA",
     "Eyeblinds/Earplugs Offered": "7:_prevention_Eyeblinds/earplugs_offerede",
     "General Surgery": "4:_surgical_speciality_General",
     "Patient Uses Dentures": "21: patient_uses_dentures_BI",
@@ -115,10 +115,10 @@ def main_page():
 
     with col2:
         laryngeal_mask_tube = st.radio(
-            "Laryngeal Mask using a Tube", ["Yes", "No"], key="lmt"
+            "Airway Management using a Tube", ["Yes", "No"], key="lmt"
         )
         laryngeal_mask_lma = st.radio(
-            "Laryngeal Mask using LMA", ["Yes", "No"], key="lma"
+            "Airway Management using LMA", ["Yes", "No"], key="lma"
         )
         temp_monitoring = st.radio(
             "Continuous Temperature Monitoring", ["Yes", "No"], key="temp"
@@ -170,12 +170,12 @@ def results_page():
     feature_names = [
         "Spinal Anaesthesia",
         "General Anaesthesia",
-        "Laryngeal Mask using a Tube",
+        "Airway Management using a Tube",
         "EEG Usage",
         "Target Controlled Infusion (TCI)",
         "Gynaecology/Obstetrics Surgery",
         "Continuous Temperature Monitoring",
-        "Laryngeal Mask using LMA",
+        "Airway Management using LMA",
         "Eyeblinds/Earplugs Offered",
         "General Surgery",
         "Patient Uses Dentures",
@@ -198,7 +198,7 @@ def results_page():
     # Dummy model prediction
     prediction = model.predict_proba(X_test)[0, 1]
     elevated_threshold = 0.2
-    st.success(f"The patient has {"an elevated" if prediction > elevated_threshold else "a low"} risk of postoperative delirium. Probability: {prediction*100:.1f}%")
+    st.success(f"The patient has {'an elevated' if prediction > elevated_threshold else 'a low'} risk of postoperative delirium. Probability: {prediction*100:.1f}%")
 
     # Generate and display SHAP plot
     st.markdown("### SHAP Values Explanation")
