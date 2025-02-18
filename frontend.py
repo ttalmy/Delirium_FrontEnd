@@ -106,7 +106,7 @@ def main_page():
         "Clinicians are advised to use this tool as a supplementary resource alongside professional judgment."
     )
 
-    st.title("Medical Features Input Interface")
+    st.title("DREAM: Delirium Risk Estimation and Assessment Model")
 
     # Group 1: Anaesthesia-Related Features
     st.subheader("Anaesthesia-Related Features")
@@ -174,7 +174,7 @@ def results_page():
         "Clinicians are advised to use this tool as a supplementary resource alongside professional judgment."
     )
 
-    st.title("Prediction Results")
+    st.title("DREAM: Prediction Results")
 
     feature_values = st.session_state.feature_values
 
