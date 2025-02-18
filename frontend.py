@@ -99,6 +99,13 @@ def on_predict_click():
 
 # Function for the Input Page
 def main_page():
+
+    st.warning(
+        "⚠️ **Disclaimer:** This tool is intended for use only on patients aged 60 and above. "
+        "As it is still in the beta-testing phase, the results provided may not be fully accurate. "
+        "Clinicians are advised to use this tool as a supplementary resource alongside professional judgment."
+    )
+
     st.title("Medical Features Input Interface")
 
     # Group 1: Anaesthesia-Related Features
@@ -161,6 +168,12 @@ def main_page():
 
 # Function for the Results Page
 def results_page():
+    st.warning(
+        "⚠️ **Disclaimer:** This tool is intended for use only on patients aged 60 and above. "
+        "As it is still in the beta-testing phase, the results provided may not be fully accurate. "
+        "Clinicians are advised to use this tool as a supplementary resource alongside professional judgment."
+    )
+
     st.title("Prediction Results")
 
     feature_values = st.session_state.feature_values
